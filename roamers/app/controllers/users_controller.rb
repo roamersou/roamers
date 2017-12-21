@@ -7,6 +7,9 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
   end
 
+  def new
+  end
+  
   def login
   end
 end

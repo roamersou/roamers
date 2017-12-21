@@ -31,7 +31,6 @@
   }
   
   .user-name a:hover {
-    color: #3ecdc6;
   }
   
   .user-left {
@@ -100,7 +99,7 @@
   }
   
   .user-tabs li.active {
-    border-bottom: 2px solid #3ecdc6;
+    border-bottom: 2px solid;
   }
   
   .user-tabs li.active a {
@@ -114,6 +113,21 @@
   }
   
   /* users/new, users/edit ================================ */
+  .users-new{
+    text-align: center;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    font-family: sans-serif;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: center 50%;
+    background-size: cover;
+    background-image: url("/home01.jpg");
+  }
+
   .users-form input {
     margin-bottom: 15px;
   }
