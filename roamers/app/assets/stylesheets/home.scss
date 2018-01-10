@@ -54,22 +54,30 @@
     min-height: 100%;
     background-color: #f5f8fa;
   }
-  
-  .container {
-    max-width: 600px;
-    margin: 60px auto;
-    padding-left: 15px;
-    padding-right: 15px;
+  .clear-fix {
     clear: both;
   }
-  
-  /* ヘッダー ================================ */
-  header {
-    height: 64px;
-    position: absolute;
-    z-index: 1;
-    width: 100%;
+  // .container {
+  //   max-width: 600px;
+  //   margin: 60px auto;
+  //   padding-left: 15px;
+  //   padding-right: 15px;
+  //   clear: both;
+  // }
+    .web-size {
+    display: none;
   }
+/* 変数 ================================ */
+$roamers-color: #669fd0;
+$btn-color: #F86C30;
+
+  /* ヘッダー ================================ */
+  // header {
+  //   height: 64px;
+  //   position: absolute;
+  //   z-index: 1;
+  //   width: 100%;
+  // }
   
   .header-logo {
     float: left;
@@ -130,10 +138,9 @@
     background-position: center 50%;
     background-size: cover;
     background-image: url("/home01.jpg");
-  }
-  .top-main::before{
+    &::before{
   /* 透過した黒を重ねる */
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(0,0,0,0.3s);
   /* どの範囲に重ねるかを指定 */
   position: absolute;
   top: 0;
@@ -142,6 +149,7 @@
   left: 0;
   content: ' ';
 }
+  }
 .box-black-mask {
   position: absolute;
 }
@@ -150,13 +158,13 @@
   }
 
   .top-logo{
-    width: 35%;
+    width: 45%;
   }
   .top-link{
-    background-color: #F86C30;
+    background-color: $btn-color;
     padding: 10px 0;
     width: 90vw;
-    margin: 20vw auto 0;
+    margin: 18vw auto 0;
     border-radius: 45px;
       a {
         color: #fff;
@@ -189,6 +197,18 @@
     background-position: center 50%;
     background-size: cover;
     background-image: url("/home01.jpg");
+
+    &::before{
+      /* 透過した黒を重ねる */
+      background-color: rgba(0,0,0,0.3);
+      /* どの範囲に重ねるかを指定 */
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      content: ' ';
+    }
     h2 {
       font-family: 'Roboto Slab', serif;
       font-size: 24px;
@@ -242,7 +262,7 @@
       }
     }
     .btn-signup {
-      background-color: #F86C30;
+      background-color: $btn-color;
       padding: 10px 0;
       position: absolute;
       bottom: 0;
@@ -253,23 +273,12 @@
       font-size: 16px;
     }
   }
-  #about-main::before{
-  /* 透過した黒を重ねる */
-  background-color: rgba(0,0,0,0.3);
-  /* どの範囲に重ねるかを指定 */
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  content: ' ';
-}
   #about-main p {
     font-weight: 200;
     font-size: 20px;
   }
-
-/* Slider */
+/* slick================================ */
+/* slider=================== */
 
 .slick-slider {
     // position: relative;
@@ -398,7 +407,7 @@ $slick-font-path: "./fonts/" !default;
 $slick-font-family: "slick" !default;
 $slick-loader-path: "./" !default;
 $slick-arrow-color: white !default;
-$slick-dot-color: #F86C30 !default;
+$slick-dot-color: $btn-color !default;
 $slick-dot-color-active: $slick-dot-color !default;
 $slick-prev-character: "\2190" !default;
 $slick-next-character: "\2192" !default;
@@ -515,18 +524,22 @@ $slick-opacity-not-active: 0.25 !default;
     max-width: 600px;
     margin: 0 auto;
     //background-color: white;
-    box-shadow: 0 2px 6px #c1ced7;
   }
   
   .form-heading {
     font-weight: 300;
-    margin: 60px 0 20px;
-    font-size: 48px;
-    color: #bcc8d4;
+    font-size: 20px;
+    color: #fff;
+    p {
+      width: 100vw;
+      border-bottom: solid 2px #fff;
+      padding: 20px 0 5px;
+    }
   }
-  
   .form-body {
     padding: 30px;
+    color: #fff;
+    text-align: left;
   }
   
   .form-error {
@@ -535,12 +548,12 @@ $slick-opacity-not-active: 0.25 !default;
   
   .form input {
     width: 100%;
-    border: 1px solid #d8dadf;
+    border: 1px solid #fff;
     padding: 10px;
-    color: #57575f;
+    color: #fff;
     font-size: 16px;
     letter-spacing: 2px;
-    border-radius: 2px;
+    border-radius: 20px;
   }
   
   .form textarea {
@@ -555,11 +568,13 @@ $slick-opacity-not-active: 0.25 !default;
     color: white;
     cursor: pointer;
     font-weight: 300;
-    width: 120px;
-    border-radius: 2px;
-    margin-top: 8px;
+    width: 100%;
+    border-radius: 20px;
+    margin-top: 50px;
     margin-bottom: 0;
     float: right;
+    background: #F86C30;
+    border: none;
   }
   
   .form-body:after {
@@ -580,4 +595,119 @@ $slick-opacity-not-active: 0.25 !default;
     width: 100%;
     border-radius: 0 0 2px 2px;
     font-size: 14px;
+}
+/* WEBサイズ ================================ */
+@media screen and (min-width: 960px) {
+  .mobile-size {
+    display: none;
   }
+  .web-size {
+    display: block;
+  }
+  .main {
+    padding: 10px 0;
+    height: 500px;
+  }
+  .container {
+    width: 100vw;
+    position: relative;
+    margin: 0 auto;
+  }
+  .top-logo {
+    float: left;
+    width: 80px;
+    margin-left: 10px;
+  }
+  .top-main h1 {
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 1.3;
+    -webkit-font-smoothing: antialiased;
+    float: left;
+    padding: 15px 0 0 15px;
+    margin-bottom: 0;
+  }
+  header {
+    width: 960px;
+    margin: 0 auto;
+    ul {
+      float: right;
+      li {
+        float: left;
+        padding: 25px 20px 0 0;
+      }
+    }
+  }
+  .copy-box {
+    padding-top: 65px;
+    width: 429px;
+    margin: 0 auto;
+    h2 {
+      font-size: 32px;
+      font-weight: 400;
+    }
+    h3 {
+      padding-top: 30px;
+      font-size: 18px;
+      font-weight: 400;
+    }
+  }
+  .top-link {
+    width: 430px;
+    padding: 15px 0;
+    margin-top: 60px;
+  }
+  .point {
+    margin-top: 70px;
+    ul {
+      font-size: 18px;
+      line-height: 32px;
+      letter-spacing: 1.5px;
+    }
+  }
+  .section_title {
+    font-family: 'Roboto Slab', serif;
+    text-align: center;
+    font-weight: 500;
+    font-size: 28px;
+    padding-bottom: 35px;
+    span {
+      font-family: sans-serif;
+      font-size: 24px;
+      padding-left: 5px;
+    }
+  }
+  .point-item {
+    text-align: left;
+    margin: 0 auto;
+    width: 473px;
+  }
+  .how-to-use {
+    margin: 70px auto;
+    width: 960px;
+    li {
+      float: left;
+    }
+    img {
+      width: 200px;
+    }
+    p {
+      text-align: center;
+      padding-top: 10px;
+    }
+    .arrow {
+      width: 0;
+      height: 0;
+      border: 50px solid transparent;
+      border-left: 50px solid $roamers-color;
+      margin-top: 140px;
+      margin-left: 48px;
+    }
+  }
+  footer {
+    background-color: #17161b;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+  }
+}
