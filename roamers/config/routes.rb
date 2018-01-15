@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  devise_for :users
   get "login" => "users#login"
 
-  get "signup" => "users#new"
+  get "users/signup" => "users#new"
 
   get "users/index" => "users#index"
   get "users/:id" => "users#show"
