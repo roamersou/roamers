@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
+  # コールバック用URL
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+
+
   get "login" => "users#login"
 
   get "users/signup" => "users#new"
