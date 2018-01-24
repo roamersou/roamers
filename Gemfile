@@ -12,6 +12,8 @@ gem 'puma', '~> 3.7'
 gem 'slim-rails'
 gem 'webpacker'
 
+gem 'high_voltage'
+
 gem 'devise'
 gem 'omniauth-facebook'
 
