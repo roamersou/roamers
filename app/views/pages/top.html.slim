@@ -7,7 +7,7 @@ body
       .top-message
         h1 Musubi
       li.top-link
-        a href="/about"  Musubiへようこそ
+        = link_to 'Musubiへようこそ', front_page_path('about')
   /! //////////web//////////
   .web-size
     .main.top-main
@@ -17,6 +17,6 @@ body
             h2 Musubi
             h3 感謝で繋がる恩送りコミュニティ
             li.top-link
-              a href="/about"  Musubiへようこそ
+              = link_to 'Musubiへようこそ', front_page_path('about')
     footer
       p ©Copyright2018 Roamers Life.All Rights Reserved.
