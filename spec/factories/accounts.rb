@@ -7,6 +7,8 @@
 #  encrypted_password     :string(255)      default(""), not null
 #  uid                    :string(255)
 #  provider               :string(255)
+#  name                   :string(255)
+#  image                  :text(65535)
 #  reset_password_token   :string(255)
 #  reset_password_sent_at :datetime
 #  remember_created_at    :datetime

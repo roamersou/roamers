@@ -9,6 +9,10 @@ class DeviseCreateAccounts < ActiveRecord::Migration[5.1]
       t.string :uid
       t.string :provider
 
+      # User data
+      t.string :name
+      t.text :image
+
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at
