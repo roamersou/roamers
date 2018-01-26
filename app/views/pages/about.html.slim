@@ -24,10 +24,10 @@ ul
     | 発展に貢献くださる方はパトロンという形での援助を
     | 受け付けております。
 h2 メンバーリストから面白そうな人を見つけましょう
-= img_tag 'intro-mock01'
+= image_tag('intro-mock01.png')
 h2 プロフィール詳細を確認してメッセージで日程のやりとりをしましょう
-img src="/intro-mock02.png"
+= image_tag('intro-mock02.png')
 h2 出会いの後はメンバーのレビューと 感謝の気持ちを"UKIUKI"で伝えましょう
-img src="/intro-mock03.png"
-/ = link_to("今すぐMusubiのメンバーになる","/users/sign_up")
-  button.btn-signup
+= image_tag('intro-mock03.png')
+= link_to new_account_registration_path
+  button.btn-signup 今すぐMusubiのメンバーになる
