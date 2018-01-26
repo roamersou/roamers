@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    title Roamers
+    = csrf_meta_tags
+    = javascript_pack_tag 'application'
+    = stylesheet_pack_tag 'application'
+  body
+    - if current_account
+      p
+        | ログイン中のユーザー
+        = current_account.name
+      = link_to 'ログアウト', destroy_account_session_path, method: :delete
+    - else
+      = link_to 'ログイン', new_account_session_path
+    p.notice= notice
+    p.alert= alert
+    = yield
+  footer
+    p ©Copyright2018 Roamers Life.All Rights Reserved.
