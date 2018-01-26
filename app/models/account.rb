@@ -31,10 +31,10 @@ class Account < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
   def self.find_for_oauth(auth)
-    account = self.where(uid: auth.uid, provider: auth.provider).first
-      
+    account = where(uid: auth.uid, provider: auth.provider).first
+
     unless account
-      user = self.create(
+      user = create(
         uid:      auth.uid,
         provider: auth.provider,
         email:    auth.info.email,
@@ -44,9 +44,9 @@ class Account < ApplicationRecord
 
     account
   end
-      
+
   private
-      
+
   def self.dummy_email(auth)
     "#{auth.uid}-#{auth.provider}@example.com"
   end
