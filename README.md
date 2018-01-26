@@ -9,3 +9,19 @@
 ## なんでこうなってるの
 ApplicationHelperにimage_tagをモンキーパッチしています
 assetsに移動させた場合でも、ApplicationHelperにimage_tagをモンキーパッチを消すだけで通常のrailsに戻れます
+
+# 環境構築
+
+```
+$ brew install rbenv
+$ brew install ruby-build
+$ brew install mysql
+$ rbenv install 2.5.0
+$ ruby -v
+```
+2.5.0が返されればOK
+```
+$ bundle
+$ rails db:create db:migrate
+$ rails s
+```
