@@ -1,0 +1,8 @@
+= form_with model: @pay_forward, local: true do |f|
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :body
+    = f.text_area :body
+  .actions = f.submit
