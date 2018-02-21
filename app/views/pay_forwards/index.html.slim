@@ -1,9 +1,30 @@
-h1 Musubi一覧
-ul
-  - @pay_forwards.each do |pf|
-    li
-      = link_to pay_forward_path(pf)
-        h2= pf.title
-        p= simple_format(pf.body)
+.main-menu
+  .header
+    .icon-left
+    .menu-title
+      h2 Musubi
+    .icon-right
+    .menu-list
+      .menu-item
+        p メンバー
+        p イベント情報
+        p みんなの恩贈り
+        p みんなのサンクスレター
+  .search-box
+    input type = "text"
+  .content-list
+  
+      .content-item
+        ul
+          - @pay_forwards.each do |pf|
+            li
+              = link_to pay_forward_path(pf)
+                h2= pf.title
+                p= simple_format(pf.body)
+
+        .content-img
+        .content-pf-im
+        .content-place
+
 
 = link_to '新しくつくる', new_pay_forward_path

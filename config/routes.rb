@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-
-  root to: 'home#index'
+  get "/" => "home#index"
+  # root to: 'home#index'
+  
   resources :pay_forwards
 
   devise_for :accounts, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
