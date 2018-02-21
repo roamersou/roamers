@@ -2,16 +2,20 @@
   .header
     .icon-left
     .menu-title
-      h2 Musubi
+      = link_to '/'
+       | 
+       h1 Musubi
     .icon-right
     .menu-list
       .menu-item
-        p メンバー
-        p イベント情報
-        p みんなの恩贈り
-        p みんなのサンクスレター
-  .search-box
-    input type = "text"
+          p メンバー
+          = link_to events_path
+            |
+            p イベント情報
+          p みんなの恩贈り
+          p みんなのサンクスレター
+  / .search-box
+  /   input type = "text"
   .content-list
   
       .content-item

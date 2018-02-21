@@ -1,0 +1,31 @@
+.main-menu
+  .header
+    .icon-left
+    .menu-title
+      = link_to '/'
+       | 
+       h1 Musubi
+    .icon-right
+    .menu-list
+      .menu-item
+          p メンバー
+          p イベント情報
+          = link_to '/pay_forwards'
+            |
+            p みんなの恩贈り
+          p みんなのサンクスレター
+/   .search-box
+/     input type = "text"
+.content-list
+  
+      .content-item
+        ul
+          - @events.each do |ev|
+            li
+              = link_to event_path(ev)
+                h2= ev.title
+                p= ev.event_date
+                p= ev.place
+
+
+= link_to '新しくつくる', new_event_path

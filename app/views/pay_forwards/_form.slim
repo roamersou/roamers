@@ -1,8 +1,13 @@
 = form_with model: @pay_forward, local: true do |f|
+  .top_image
+    =f.label :画像
+    =form_tag('pay_forwards_path', {multipart: true})
+    <input name="image" type="file">
+    
   .field
-    = f.label :title
-    = f.text_field :title
+    = f.label :タイトル
+    = f.text_field :title, placeholder: '20字以内'
   .field
-    = f.label :body
+    = f.label :詳細
     = f.text_area :body
-  .actions = f.submit
+  .actions = f.submit '公開する'

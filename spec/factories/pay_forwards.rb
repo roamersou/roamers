@@ -8,6 +8,9 @@
 #  body       :text(65535)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  date       :string(255)
+#  place      :string(255)
+#  image      :string(255)
 #
 # Indexes
 #
