@@ -7,5 +7,4 @@ Rails.application.routes.draw do
   devise_for :accounts, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
   # high_voltage
   get '*id' => 'pages#show', as: 'front_page'
-  get '/menu' => 'pages#menu'
 end
