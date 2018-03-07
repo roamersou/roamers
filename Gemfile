@@ -12,6 +12,7 @@ gem 'rails', '~> 5.1.4'
 gem 'puma', '~> 3.7'
 gem 'slim-rails'
 gem 'webpacker'
+gem 'html2slim'
 
 gem 'high_voltage'
 
