@@ -18,6 +18,8 @@ gem 'high_voltage'
 
 gem 'devise'
 gem 'omniauth-facebook'
+gem 'html2slim'
+gem 'jquery-rails'
 
 group :development, :test do
   gem 'capybara', '~> 2.13'
