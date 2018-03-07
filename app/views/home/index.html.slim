@@ -1,7 +1,11 @@
-h1 Musubi
-h2 感謝で繋がる恩贈りコミュニティ
-= link_to front_page_path('about')
-  button Musubiとは
-
-= link_to pay_forwards_path
-  button Musubi一覧
+.home-bg
+	= image_tag 'musubi-logo-type-white.png', :class => "service-title"
+	h1.service-subtitle 感謝で繋がる恩贈りコミュニティ
+	p.info-text ※招待コードを入力するとFacebookでログインができます。
+	.verify-btn-box
+		= link_to front_page_path('about')
+		  button.verify-btn →
+	= link_to pay_forwards_path
+	  button.contract 利用規約
+	= link_to pay_forwards_path
+	  button.privacy-policy プライバシーポリシー
