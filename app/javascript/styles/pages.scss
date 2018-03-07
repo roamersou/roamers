@@ -1,0 +1,20 @@
+@mixin common-page-title {
+	font-size: 20px;
+	font-weight: 400;
+	color: #333;
+	text-align: center;
+	padding-top: 25px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+}
+@mixin common-page-text {
+	font-size: 12px;
+	color: #444;
+	padding: 15px;
+}
+.privecy-title, .terms-title {
+	@include common-page-title;
+}
+.privacy-text, .terms-text {
+	@include common-page-text;
+}
