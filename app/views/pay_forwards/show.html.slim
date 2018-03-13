@@ -1,4 +1,7 @@
+= image_tag(@pay_forward.image, :class => "pf-image")
 h1= @pay_forward.title
+p= simple_format(@pay_forward.date)
+p= simple_format(@pay_forward.place)
 p= simple_format(@pay_forward.body)
 
 = link_to '一覧へ', pay_forwards_path

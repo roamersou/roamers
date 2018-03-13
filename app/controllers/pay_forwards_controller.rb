@@ -28,7 +28,10 @@ class PayForwardsController < ApplicationController
     @musubi = PayForward.find(params[:id])
   end
 
+
+  # createアクションのpay_forward_paramsに入る
   def pay_forward_params
     params.require(:pay_forward).permit(:title, :body)
   end
+  
 end

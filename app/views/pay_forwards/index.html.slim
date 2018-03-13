@@ -24,10 +24,12 @@
         li.header-menu-item よくある質問
         li.header-menu-item Musubiを退会する
     ul.menu-list.header-bottom
-      li.menu-item メンバー
+      = link_to accounts_path
+        |
+        li.menu-item メンバー
       = link_to events_path
         |
-      li.menu-item イベント情報
+        li.menu-item イベント情報
       li.menu-item みんなの恩贈り
       li.menu-item みんなのサンクスレター
   / .search-box
@@ -39,8 +41,10 @@
           - @pay_forwards.each do |pf|
             li
               = link_to pay_forward_path(pf)
+                = image_tag(pf.image, :class => "pf-icon")
                 h2= pf.title
-                p= simple_format(pf.body)
+                h2= pf.place
+                //p= simple_format(pf.body)
 
         .content-img
         .content-pf-im
