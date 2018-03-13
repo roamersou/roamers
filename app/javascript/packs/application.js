@@ -3,3 +3,4 @@ require.context('../images/', true)
 
 const Rails = require('rails-ujs')
 Rails.start()
+

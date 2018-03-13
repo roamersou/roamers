@@ -46,3 +46,7 @@ bin/rspec
 bin/rackup
 bin/pumactl
 bin/puma
+bin/spring
+bin/rake
+bin/webpack-dev-server
+bin/webpack
