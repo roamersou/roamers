@@ -1,4 +1,5 @@
 $main-color: #f4ad49;
+$btn-color: #db5565;
 .header-top {
 	background: $main-color;
 	height: 65px;
@@ -66,5 +67,65 @@ $main-color: #f4ad49;
 	}
 	.give-icon {
 		width: 50px;
+	}
+}
+
+// 恩贈り作成のページ
+.create-pf {
+	background: #f2f2f2;
+	padding-bottom: 60px;
+	.create-pf-title {
+	font-size: 20px;
+	font-weight: 400;
+	color: #333;
+	background: #fff;
+	text-align: center;
+	padding-top: 25px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+	}
+	.top-image {
+		background: #fff;
+	    width: 165px;
+	    height: 102px;
+	    margin: 30px auto;
+	}
+	.field-title {
+		font-size: 14px;
+		color: #666;
+		padding-left: 15px;
+	}
+	.field{
+		input::placeholder, textarea::placeholder {
+		font-size: 14px;
+		color: #ccc;
+		}
+	}
+	.title-text, .date-text, .place-text, .body-text {
+		font-size: 14px;
+		padding-left: 15px;
+		margin-top: 5px;
+		margin-bottom: 20px;
+		background: #fff;
+		display: block;
+		width: 100vw;
+		height: 50px;
+	}
+	.body-text {
+		padding-top: 15px;
+		height: 215px;
+	}
+	.actions {
+		text-align: center;
+		background: $btn-color;
+		width: 345px;
+		height: 50px;
+		margin: 60px auto 0;
+    	border-radius: 50px;
+    	line-height: 50px;
+    	input[type="submit"] {
+    		font-size: 16px;
+    		color: #fff;
+    	}
 	}
 }

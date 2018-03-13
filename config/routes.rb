@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  get 'accounts/index'
+
   get "/" => "home#index"
   # root to: 'home#index'
   
+  resources :accounts
   resources :pay_forwards
   resources :events
   devise_for :accounts, controllers: { omniauth_callbacks: 'omniauth_callbacks' }

@@ -1,13 +1,19 @@
 = form_with model: @pay_forward, local: true do |f|
-  .top_image
+  .top-image
     =f.label :画像
     =form_tag('pay_forwards_path', {multipart: true})
     <input name="image" type="file">
-    
+
   .field
-    = f.label :タイトル
-    = f.text_field :title, placeholder: '20字以内'
+    = f.label :タイトル, :class => "field-title"
+    = f.text_field :title, placeholder: 'タイトル (20字以内)', :class => "title-text"
   .field
-    = f.label :詳細
-    = f.text_area :body
+    = f.label :日時, :class => "field-title"
+    = f.text_field :date, placeholder: '例：1/20, 毎週土曜日, 要相談など', :class => "date-text"
+  .field
+    = f.label :場所, :class => "field-title"
+    = f.text_field :place, placeholder: '地域 (渋谷、新宿、横浜など）', :class => "place-text"
+  .field
+    = f.label :詳細, :class => "field-title"
+    = f.text_area :body, placeholder: '詳細 (200文字以内)', :class => "body-text"
   .actions = f.submit '公開する'
