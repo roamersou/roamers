@@ -2,13 +2,12 @@
   .header
     .header-top
       .icon-left
-        = image_tag "menu-icon.png", :class => "menu-icon active"
+        = image_tag "menu-icon.png", :class => "menu-icon active-icon"
         = image_tag "cancel-icon.png", :class => "cancel-icon"
       .menu-title
         .musubi-logo
-          = image_tag 'musubi-logo-type-white.png', :class => "musubi-icon"
-          = link_to '/'
-            |
+          = link_to "/pay_forwards"
+            = image_tag 'musubi-logo-type-white.png', :class => "musubi-icon"
       .icon-right
         = image_tag 'message-icon.png', :class => "message-icon"
     .header-menu
@@ -16,37 +15,38 @@
         li.header-menu-item UKIUKI残高
         li.header-menu-item プロフィール登録・編集
         li.header-menu-item 信頼できる仲間をMusubiに招待する
-        li.header-menu-item パトロンになる
-          = link_to "https://camp-fire.jp/projects/view/55604"
-        li.header-menu-item Musubiの理念
+        li.header-menu-item
+          = link_to "パトロンになる", "https://camp-fire.jp/projects/view/55604"
+        li.header-menu-item
+          = link_to "Musubiの理念", "/vision"
         li.header-menu-item フィードバックを送る
-        li.header-menu-item 利用規約
-        li.header-menu-item プライバシーポリシー
+        li.header-menu-item
+          = link_to "利用規約", "/terms"
+        li.header-menu-item
+          = link_to "プライバシーポリシー", "/privacy"
         li.header-menu-item よくある質問
         li.header-menu-item Musubiを退会する
-    ul.menu-list.header-bottom
+    ul.menu-list.clearfix
+      li.menu-item.active-menu-list みんなの恩贈り
+      li.menu-item みんなのサンクスレター
       = link_to accounts_path
         |
-        li.menu-item メンバー
+      li.menu-item メンバー
       = link_to events_path
         |
-        li.menu-item イベント情報
-      li.menu-item みんなの恩贈り
-      li.menu-item みんなのサンクスレター
+      li.menu-item イベント
   / .search-box
   /   input type = "text"
   .content-list
-
       .content-item
         ul
           - @pay_forwards.each do |pf|
             li
-              / = link_to pay_forward_path(pf)
-              /   = image_tag(pf.image, :class => "pf-icon")
+              = link_to pay_forward_path(pf)
+                = image_tag(pf.image, :class => "pf-icon")
                 h2= pf.title
                 h2= pf.place
                 //p= simple_format(pf.body)
-
         .content-img
         .content-pf-im
         .content-place
@@ -56,7 +56,21 @@
 
 javascript:
    $(".icon-left").click(function(){
-      $(".menu-icon").toggleClass("active");
-      $(".cancel-icon").toggleClass("active");
+      $(".menu-icon").toggleClass("active-icon");
+      $(".cancel-icon").toggleClass("active-icon");
       $(".header-menu").slideToggle()
+    });
+   //クリックしたときのファンクションをまとめて指定
+   $('.menu-list li').click(function(){
+      //.index()を使いクリックされたタブが何番目かを調べ、
+        //indexという変数に代入します。
+      var index = $('.menu-list li').index($(this));
+      //コンテンツを一度すべて非表示にし、
+      // $('.menu-list li').css('display','none');
+      //クリックされたタブと同じ順番のコンテンツを表示します。
+      // $('.menu-list li').eq(index).css('display','block');
+      //一度タブについているクラスselectを消し、
+        $('.menu-list li').removeClass('active-menu-list');
+        //クリックされたタブのみにクラスselectをつけます。
+        $(this).addClass('active-menu-list')
     });
