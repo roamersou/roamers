@@ -41,14 +41,10 @@
           - @pay_forwards.each do |pf|
             li
               = link_to pay_forward_path(pf)
-                = image_tag(pf.image, :class => "pf-icon")
+                = image_tag(pf.image_name)
                 h2= pf.title
                 h2= pf.place
-                //p= simple_format(pf.body)
 
-        .content-img
-        .content-pf-im
-        .content-place
 .create-item-btn
   = link_to '恩を贈る', new_pay_forward_path, :class => "create-item"
   = image_tag 'UKIUKI-give.png', :class => "give-icon"
