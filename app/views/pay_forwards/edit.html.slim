@@ -2,10 +2,10 @@
 	h1.update-pf-title 恩贈りの情報を編集
 
 = form_with model: @pay_forward, local: true do |f|
-  .top-image
-    =f.label :画像
-    =form_tag(pay_forwards_path, {multipart: true})
-    <input name="image" type="file">
+  / .top-image
+  /   =f.label :画像
+  /   =form_tag(pay_forwards_path, {multipart: true})
+  /   <input name="image" type="file">
 
   .field
     = f.label :タイトル, :class => "field-title"
