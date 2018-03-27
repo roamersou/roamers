@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180221075923) do
+ActiveRecord::Schema.define(version: 20180317154206) do
 
   create_table "accounts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
@@ -58,7 +58,8 @@ ActiveRecord::Schema.define(version: 20180221075923) do
     t.datetime "updated_at", null: false
     t.string "date"
     t.string "place"
-    t.string "image"
+    t.string "image_name"
+    t.binary "image_file"
     t.index ["account_id"], name: "index_pay_forwards_on_account_id"
   end
 

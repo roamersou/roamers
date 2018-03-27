@@ -7,6 +7,8 @@ class PayForwardsController < ApplicationController
 
   def show
     @pay_forward = PayForward.find(params[:id])
+    # @image_file_obj = params[:pay_forward][:image_name]
+    # params[:pay_forward][:image_name] = @image_file_obj.original_filename
   end
 
   def new
@@ -15,10 +17,25 @@ class PayForwardsController < ApplicationController
 
   def create
     @pay_forward = PayForward.new(pay_forward_params)
+    @pay_forward.image_name = "default.jpg"
     if @pay_forward.save
       redirect_to @pay_forward, notice: 'pay_forward was successfully created.'
     else
       render :new
+    end
+    
+  end
+
+  def edit
+    @pay_forward = PayForward.find(params[:id])
+  end
+
+  def update
+    @pay_forward = PayForward.find(params[:id])
+    if @pay_forward.save
+      redirect_to @pay_forward, notice: 'pay_forward was successfully updated.'
+    else
+      render :edit
     end
   end
 
@@ -31,7 +48,7 @@ class PayForwardsController < ApplicationController
 
   # createアクションのpay_forward_paramsに入る
   def pay_forward_params
-    params.require(:pay_forward).permit(:title, :body)
+    params.require(:pay_forward).permit(:title, :body, :date, :place, :image_name)
   end
-  
+
 end
