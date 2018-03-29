@@ -26,15 +26,16 @@
           = link_to "プライバシーポリシー", "/privacy"
         li.header-menu-item よくある質問
         li.header-menu-item Musubiを退会する
+
     ul.menu-list.clearfix
       li.menu-item.active-menu-list みんなの恩贈り
       li.menu-item みんなのサンクスレター
       = link_to accounts_path
         |
-      li.menu-item メンバー
+        li.menu-item メンバー
       = link_to events_path
         |
-      li.menu-item イベント
+        li.menu-item イベント
   / .search-box
   /   input type = "text"
   .content-list
@@ -43,13 +44,10 @@
           - @pay_forwards.each do |pf|
             li
               = link_to pay_forward_path(pf)
-                = image_tag(pf.image, :class => "pf-icon")
-                h2= pf.title
+                = image_tag(pf.image_name)
                 h2= pf.place
-                //p= simple_format(pf.body)
-        .content-img
-        .content-pf-im
-        .content-place
+                h2= pf.title
+
 .create-item-btn
   = link_to '恩を贈る', new_pay_forward_path, :class => "create-item"
   = image_tag 'UKIUKI-give.png', :class => "give-icon"

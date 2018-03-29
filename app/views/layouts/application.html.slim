@@ -16,7 +16,7 @@ html
         / = current_account.name
       / = link_to 'ログアウト', destroy_account_session_path, method: :delete
     - else
-      = link_to 'ログイン', new_account_session_path
+      = link_to 'Facebookでログイン', new_account_session_path
     p.notice= notice
     p.alert= alert
     = yield
