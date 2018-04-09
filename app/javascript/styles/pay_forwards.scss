@@ -105,7 +105,7 @@ $btn-color: #db5565;
 	}
 }
 
-// 恩贈り作成のページ
+// 恩贈り作成のページ(new.html.slim,_form.slim)
 .create-pf {
 	background: #f2f2f2;
 	padding-bottom: 60px;
@@ -162,5 +162,46 @@ $btn-color: #db5565;
     		font-size: 16px;
     		color: #fff;
     	}
+	}
+}
+
+// 恩贈り(show.html.slim)
+.pay_forward_icon {
+	.pf-mv {
+		position: relative;
+		height: 232px;
+		.pf-img {
+			width: 375px;
+		}
+		.pf-title {
+			font-size: 16px;
+			position: absolute;
+		    bottom: 0;
+		    color: #fff;
+		    font-weight: 400;
+		    width: 100%;
+		    text-align: center;
+		    line-height: 16px;
+		    background: rgba(0,0,0,0.5);
+		    padding: 13px 0;
+		}
+	}
+	.pf-text {
+		font-size: 12px;
+		color: #444;
+	}
+	.pf-body {
+		color: #444;
+		padding: 15px;
+		.pf-date-title, .pf-place-title, .pf-about-title {
+			font-size: 16px;
+			line-height: 16px;
+			font-weight: 600;
+		}
+		p {
+			font-size: 12px;
+			// pタグにクラスがつけられないため一旦pタグで記述する
+			padding: 5px 0;
+		}
 	}
 }
