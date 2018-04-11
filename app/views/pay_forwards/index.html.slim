@@ -1,42 +1,5 @@
 .main-menu
-  .header
-    .header-top
-      .icon-left
-        = image_tag "menu-icon.png", :class => "menu-icon active-icon"
-        = image_tag "cancel-icon.png", :class => "cancel-icon"
-      .menu-title
-        .musubi-logo
-          = link_to "/pay_forwards"
-            = image_tag 'musubi-logo-type-white.png', :class => "musubi-icon"
-      .icon-right
-        = image_tag 'message-icon.png', :class => "message-icon"
-    .header-menu
-      ul.header-menu-list
-        li.header-menu-item UKIUKI残高
-        li.header-menu-item プロフィール登録・編集
-        li.header-menu-item 信頼できる仲間をMusubiに招待する
-        li.header-menu-item
-          = link_to "パトロンになる", "https://camp-fire.jp/projects/view/55604"
-        li.header-menu-item
-          = link_to "Musubiの理念", "/vision"
-        li.header-menu-item フィードバックを送る
-        li.header-menu-item
-          = link_to "利用規約", "/terms"
-        li.header-menu-item
-          = link_to "プライバシーポリシー", "/privacy"
-        li.header-menu-item よくある質問
-        li.header-menu-item Musubiを退会する
-    ul.menu-list.clearfix
-      li.menu-item.active-menu-list みんなの恩贈り
-      li.menu-item みんなのサンクスレター
-      = link_to accounts_path
-        |
-      li.menu-item メンバー
-      = link_to events_path
-        |
-      li.menu-item イベント
-  / .search-box
-  /   input type = "text"
+  = render 'header'
   .content-list
       .content-item
         ul

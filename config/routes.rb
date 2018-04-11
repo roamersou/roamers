@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
-  get 'accounts/index'
 
   get "/" => "home#index"
-  # root to: 'home#index'
-  
-  resources :accounts
+  # get "signup" => "users#new"
+  resources :users
+  # resources :accounts
   resources :pay_forwards
   resources :events
-  devise_for :accounts, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
+  
+  # devise_for :accounts, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
   # high_voltage
   get '*id' => 'pages#show', as: 'front_page'
 end

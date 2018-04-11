@@ -1,10 +1,15 @@
 .home-bg
 	= image_tag 'musubi-logo-type-white.png', :class => "service-title"
 	h1.service-subtitle 感謝で繋がる恩贈りコミュニティ
-	p.info-text ※招待コードを入力するとFacebookでログインができます。
-	.verify-btn-box
-		= link_to front_page_path('about')
-		  button.verify-btn →
+	.content
+		= link_to new_user_path
+			|
+			button.signup 新規登録
+		
+	/ p.info-text ※招待コードを入力するとFacebookでログインができます。
+	/ .verify-btn-box
+	/ 	= link_to front_page_path('about')
+	/ 	  button.verify-btn →
 	= link_to front_page_path('terms')
 	  button.terms 利用規約
 	= link_to front_page_path('privacy')

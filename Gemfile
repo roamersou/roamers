@@ -8,6 +8,9 @@ end
 gem 'mysql2', '>= 0.3.18', '< 0.5'
 gem 'sqlite3'
 gem 'rails', '~> 5.1.4'
+gem 'bcrypt', '3.1.11'
+gem 'bootstrap-sass', '3.2.0.0'
+gem 'byebug',  '9.0.6', platform: :mri
 
 gem 'puma', '~> 3.7'
 gem 'slim-rails'

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180317154206) do
+ActiveRecord::Schema.define(version: 20180405101907) do
 
   create_table "accounts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
@@ -86,6 +86,15 @@ ActiveRecord::Schema.define(version: 20180317154206) do
     t.datetime "updated_at", null: false
     t.index ["account_id"], name: "index_thanks_letters_on_account_id"
     t.index ["pay_forward_id"], name: "index_thanks_letters_on_pay_forward_id"
+  end
+
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "password_digest"
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
 end
