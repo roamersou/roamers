@@ -1,0 +1,41 @@
+  // Place all the styles related to the matching controller here.
+  // They will automatically be included in application.css.
+  // You can use Sass (SCSS) here: http://sass-lang.com/
+  /* reset ================================ */
+.home-bg {
+  background: url("../images/introduction.jpeg");
+  height: 667px;
+  background-position-x: 52%;
+  text-align: center;
+  position: relative;
+  &::before{
+  /* 透過した黒を重ねる */
+  background-color: rgba(0,0,0,0.3s);
+  /* どの範囲に重ねるかを指定 */
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: ' ';
+  }
+  .service-title {
+    width: 130px;
+    padding-top: 120px;
+    position: relative;
+    color: #fff;
+  }
+  
+    .service-subtitle {
+      font-size: 16px;
+      font-weight: 400;
+      padding-top: 20px;
+      padding-bottom: 250px;
+    }
+}
+.content{
+    .form-control, .btn-primary {
+      color: #fff;
+      position: relative;
+    }
+}
