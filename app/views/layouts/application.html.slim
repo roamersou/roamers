@@ -19,7 +19,11 @@ html
     /   = link_to 'ログイン', account_facebook_omniauth_authorize_path
     / p.notice= notice
     / p.alert= alert
-
+    - flash.each do |message_type, message|
+        .alert-danger
+          = message
+        
+    
     = yield
     = debug(params) if Rails.env.development?
   / footer
