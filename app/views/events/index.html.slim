@@ -14,10 +14,9 @@
             |
             p みんなの恩贈り
           p みんなのサンクスレター
-/   .search-box
-/     input type = "text"
-  .content-list
-
+    /   .search-box
+    /     input type = "text"
+  .body
       .content-itemz
         ul
           - @events.each do |ev|
@@ -28,4 +27,4 @@
                 p= ev.place
 
 
-= link_to '新しくつくる', new_event_path
+  = link_to '新しくつくる', new_event_path
