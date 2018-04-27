@@ -32,10 +32,11 @@ class PayForwardsController < ApplicationController
 
   def update
     @pay_forward = PayForward.find(params[:id])
-    @pay_forward.title = params[:title]
-    @pay_forward.body = params[:body]
-    @pay_forward.date = params[:date]
-    @pay_forward.place = params[:place]
+    @pay_forward.update_attributes(pay_forward_params)
+    # @pay_forward.title = params[:title]
+    # @pay_forward.body = params[:body]
+    # @pay_forward.date = params[:date]
+    # @pay_forward.place = params[:place]
     if @pay_forward.save
       redirect_to @pay_forward, notice: 'pay_forward was successfully updated.'
     else

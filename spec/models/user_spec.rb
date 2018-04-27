@@ -9,6 +9,10 @@
 #  updated_at      :datetime         not null
 #  password_digest :string(255)
 #  remember_digest :string(255)
+#  self_intro      :string(255)
+#  tw_account      :string(255)
+#  fb_account      :string(255)
+#  insta_account   :string(255)
 #
 # Indexes
 #

@@ -2,6 +2,10 @@
 .row
     aside.col-md-4
         section.user_info
+            
+            = link_to("編集","/users/#{@user.id}/edit")
             h1
                 / = gravatar_for @user
                 = @user.name
+            = image_tag "kao_default.jpg", :class => "prof_icon"
+            
