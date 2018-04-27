@@ -193,15 +193,37 @@ $btn-color: #db5565;
 	.pf-body {
 		color: #444;
 		padding: 15px;
-		.pf-date-title, .pf-place-title, .pf-about-title {
+		.pf-date-title, .pf-place-title, .pf-about-title, .pf-thanks-title {
 			font-size: 16px;
 			line-height: 16px;
 			font-weight: 600;
 		}
+		.pf-date-title:before, .pf-place-title:before, .pf-about-title:before, .pf-thanks-title:before {
+			content: '';/*何も入れない*/
+			display: inline-block;/*忘れずに！*/
+			width: 25px;/*画像の幅*/
+			height: 25px;/*画像の高さ*/
+			background-size: contain;
+			position: relative;
+		    top: 6px;
+		    margin-right: 10px;
+		}
+		.pf-date-title:before {
+			background-image: url(../images/pay-forward-item-icon01.png);
+		}
+		.pf-place-title:before {
+			background-image: url(../images/pay-forward-item-icon02.png);
+		}
+		.pf-about-title:before {
+			background-image: url(../images/pay-forward-item-icon03.png);
+		}
+		.pf-thanks-title:before {
+			background-image: url(../images/pay-forward-item-icon04.png);
+		}
 		p {
 			font-size: 12px;
 			// pタグにクラスがつけられないため一旦pタグで記述する
-			padding: 5px 0;
+			padding: 5px 0 5px 3px;
 		}
 	}
 }
