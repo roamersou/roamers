@@ -8,15 +8,29 @@ html
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
-
   body
-    - if current_account
-      p
+    / - if current_account
+    /   p
         / | ログイン中のユーザー
         / = current_account.name
       / = link_to 'ログアウト', destroy_account_session_path, method: :delete
-    - else
-      = link_to 'Facebookでログイン', new_account_session_path
-    p.notice= notice
-    p.alert= alert
+    / - else
+    /   = link_to 'Facebookでログイン', new_account_session_path
+    / p.notice= notice
+    / p.alert= alert
     = yield
+
+    / - if current_account
+    /   p
+    /     | ログイン中のユーザー
+    /     = current_account.name
+    /   = link_to 'ログアウト', destroy_account_session_path, method: :delete
+    / - else
+    /   = link_to 'ログイン', account_facebook_omniauth_authorize_path
+    / p.notice= notice
+    / p.alert= alert
+
+    / = yield
+    / = debug(params) if Rails.env.development?
+  / footer
+  /   p ©Copyright2018 Roamers Life.All Rights Reserved.
