@@ -21,20 +21,16 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find_by(id: params[:id])
+    @user = User.find(params[:id])
   end 
 
   def update
+    
     @user = User.find(params[:id])
+    # binding.pry
     @user.update_attributes(user_params)
-    @user.name = params[:name]
-    @user.self_intro = params[:self_intro]
-    @user.tw_account = params[:tw_account]
-    @user.fb_account = params[:fb_account]
-    @user.insta_account = params[:insta_account]
-    if @user.save
-      redirect_to @user
-      flash[:notice] = "ユーザー情報を編集しました！"
+    if @user.save      
+      redirect_to @user, notice: "ユーザー情報を編集しました！"
     else
       render :edit
     end
