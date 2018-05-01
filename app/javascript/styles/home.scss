@@ -65,7 +65,7 @@ body {
     padding-top: 120px;
     position: relative;
   }
-  .service-subtitle, .info-text, .signup, .terms, .privacy-policy {
+  .service-subtitle, .info-text, .signup, .login, .terms, .privacy-policy {
     color: #fff;
     position: relative;
   }
@@ -153,5 +153,60 @@ body {
       border-radius: 30px;
       font-size: 16px;
     }
+  }
+}
+//*************** アカウント編集ページ(users/edit.html.slim)***************//
+.edit-user {
+  background: #f2f2f2;
+  .form-heading {
+  font-size: 20px;
+  font-weight: 400;
+  color: #333;
+  background: #fff;
+  text-align: center;
+  padding-top: 25px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+  }
+}
+.container {
+  background: #f2f2f2;
+  padding-bottom: 60px;
+  .field-title {
+    font-size: 14px;
+    color: #666;
+    padding-left: 15px;
+  }
+  .field{
+    input::placeholder, textarea::placeholder {
+    font-size: 14px;
+    color: #ccc;
+    }
+  }
+  .field-first {
+    padding-top: 20px;
+  }
+  .name-text, .self-intro-text, .fb-account-text, .tw-account-text, .insta-account-text {
+    font-size: 14px;
+    padding-left: 15px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    background: #fff;
+    display: block;
+    width: 100vw;
+    height: 50px;
+  }
+  .actions {
+    text-align: center;
+    background: $btn-color;
+    width: 345px;
+    height: 50px;
+    margin: 60px auto 0;
+      border-radius: 50px;
+      line-height: 50px;
+      input[type="submit"] {
+        font-size: 16px;
+        color: #fff;
+      }
   }
 }

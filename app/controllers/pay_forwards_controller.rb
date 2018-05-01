@@ -19,7 +19,7 @@ class PayForwardsController < ApplicationController
     @pay_forward = PayForward.new(pay_forward_params)
     @pay_forward.image_name = "default.png"
     if @pay_forward.save
-      redirect_to @pay_forward, notice: 'pay_forward was successfully created.'
+      redirect_to @pay_forward, notice: '恩送り情報を編集しました'
     else
       render :new
     end
@@ -32,12 +32,9 @@ class PayForwardsController < ApplicationController
 
   def update
     @pay_forward = PayForward.find(params[:id])
-    @pay_forward.title = params[:title]
-    @pay_forward.body = params[:body]
-    @pay_forward.date = params[:date]
-    @pay_forward.place = params[:place]
+    @pay_forward.update_attributes(pay_forward_params)
     if @pay_forward.save
-      redirect_to @pay_forward, notice: 'pay_forward was successfully updated.'
+      redirect_to @pay_forward, notice: '恩贈りが'
     else
       render :edit
     end

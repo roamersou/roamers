@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180405101907) do
+ActiveRecord::Schema.define(version: 20180427035523) do
 
   create_table "accounts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
@@ -94,6 +94,11 @@ ActiveRecord::Schema.define(version: 20180405101907) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
+    t.string "remember_digest"
+    t.string "self_intro"
+    t.string "tw_account"
+    t.string "fb_account"
+    t.string "insta_account"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
