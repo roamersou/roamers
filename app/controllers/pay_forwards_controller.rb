@@ -17,7 +17,7 @@ class PayForwardsController < ApplicationController
 
   def create
     @pay_forward = PayForward.new(pay_forward_params)
-    @pay_forward.image_name = "default.jpg"
+    @pay_forward.image_name = "default.png"
     if @pay_forward.save
       redirect_to @pay_forward, notice: '恩送り情報を編集しました'
     else

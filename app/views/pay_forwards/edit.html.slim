@@ -7,7 +7,7 @@
     /   =form_tag(pay_forwards_path, {multipart: true})
     /   <input name="image" type="file">
 
-    .field
+    .field.field-first
       = f.label :タイトル, :class => "field-title"
       = f.text_field :title, placeholder: @pay_forward.title, :class => "title-text"
     .field

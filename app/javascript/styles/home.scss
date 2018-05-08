@@ -75,23 +75,138 @@ body {
     padding-top: 20px;
     padding-bottom: 250px;
   }
-  .verify-btn-box {
-    padding: 15px;
-  }
-  .verify-btn {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background-color: #F86C30;
-    opacity: 0.9;
+  //********* facebookログイン*********//
+  // .verify-btn-box {
+  //   padding: 15px;
+  // }
+  // .verify-btn {
+  //   width: 60px;
+  //   height: 60px;
+  //   border-radius: 50%;
+  //   background-color: #F86C30;
+  //   opacity: 0.9;
+  //   border: transparent;
+  //   font-size: 20px;
+  //   color: #fff;
+  // }
+  .signup {
+    background: rgba(248, 108, 48, .9);
+    width: 345px;
+    height: 50px;
     border: transparent;
-    font-size: 20px;
-    color: #fff;
+    border-radius: 30px;
+    font-size: 16px;
+    margin-bottom: 20px;
   }
   .info-text {
     font-size: 11px;
   }
   .terms, .privacy-policy {
     font-size: 12px;
+  }
+}
+//*************** アカウント作成ページ(users/new.html.slim)***************//
+.home-bg {
+  .sign-up-title {
+    color: #fff;
+    position: relative;
+    font-size: 22px;
+    font-weight: 400;
+    padding-top: 65px;
+    &:before {
+      content: '';/*何も入れない*/
+      display: inline-block;/*忘れずに！*/
+      width: 120px;/*画像の幅*/
+      height: 40px;/*画像の高さ*/
+      background-size: contain;
+      position: relative;
+      top: 6px;
+      margin-right: 2px;
+      background-image: url(../images/musubi-logo-type-white.png);
+    }
+  }
+  .sign-up-form {
+    text-align: left;
+    position: relative;
+    background: rgba(255,255,255,0.9);
+    box-shadow: 5px 2px 10px rgba(0, 0, 0, 0.4);
+    padding: 30px 15px;
+    margin: 20px;
+    border-radius: 5px;
+    .form-control {
+      width: 310px;
+      height: 40px;
+      /* border: transparent; */
+      border: 1px solid #7d7d7d;
+      border-radius: 20px;
+      padding-left: 20px;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    .btn-primary {
+      margin-top: 20px;
+      background: rgba(248, 108, 48, .9);
+      color: #fff;
+      width: 310px;
+      height: 50px;
+      border: transparent;
+      border-radius: 30px;
+      font-size: 16px;
+    }
+  }
+}
+//*************** アカウント編集ページ(users/edit.html.slim)***************//
+.edit-user {
+  background: #f2f2f2;
+  .form-heading {
+  font-size: 20px;
+  font-weight: 400;
+  color: #333;
+  background: #fff;
+  text-align: center;
+  padding-top: 25px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+  }
+}
+.container {
+  background: #f2f2f2;
+  padding-bottom: 60px;
+  .field-title {
+    font-size: 14px;
+    color: #666;
+    padding-left: 15px;
+  }
+  .field{
+    input::placeholder, textarea::placeholder {
+    font-size: 14px;
+    color: #ccc;
+    }
+  }
+  .field-first {
+    padding-top: 20px;
+  }
+  .name-text, .self-intro-text, .fb-account-text, .tw-account-text, .insta-account-text {
+    font-size: 14px;
+    padding-left: 15px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    background: #fff;
+    display: block;
+    width: 100vw;
+    height: 50px;
+  }
+  .actions {
+    text-align: center;
+    background: $btn-color;
+    width: 345px;
+    height: 50px;
+    margin: 60px auto 0;
+      border-radius: 50px;
+      line-height: 50px;
+      input[type="submit"] {
+        font-size: 16px;
+        color: #fff;
+      }
   }
 }

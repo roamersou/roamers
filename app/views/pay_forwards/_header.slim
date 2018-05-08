@@ -1,7 +1,7 @@
 .header
     .header-top
       .icon-left
-        = image_tag "menu-icon.png", :class => "menu-icon"
+        = image_tag "menu-icon.png", :class => "menu-icon active-icon"
         = image_tag "cancel-icon.png", :class => "cancel-icon"
       .menu-title
         = link_to '/'
@@ -28,8 +28,10 @@
         li.menu-item メンバー
       = link_to events_path
         |
-        li.menu-item イベント情報
-      li.menu-item みんなの恩贈り
+        li.menu-item イベント
+      = link_to pay_forwards_path
+        |
+        li.menu-item.active-menu-list みんなの恩贈り
       li.menu-item みんなのサンクスレター
     / .search-box
     /   input type = "text"

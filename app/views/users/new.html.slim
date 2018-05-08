@@ -1,21 +1,45 @@
 .home-bg
-	= image_tag 'musubi-logo-type-white.png', :class => "service-title"
-	h1.service-subtitle 感謝で繋がる恩贈りコミュニティ
-.content
-    = form_with model: @user, url: users_path, local: true do |f|
-        = render 'shared/error_messages'
-        .field
-        = f.label :name
-        = f.text_field :name, class: 'form-control'
-        .field
-        = f.label :email
-        = f.email_field :email, class: 'form-control'
-        .field
-        = f.label :password
-        = f.password_field :password, class: 'form-control'
-        .field
-        = f.label :password_confirmation, "Confirmation"
-        = f.password_field :password_confirmation, class: 'form-control'
-        .field
-         = f.submit "アカウント作成", class: "btn-primary"
-	
+      - provide :title, 'Sign up'
+      h1.sign-up-title へようこそ
+      .sign-up-form
+            .row
+             .col-md-6#col-md-offset-3
+              = form_with model: @user, url: users_path, local: true do |f|
+                  = render 'shared/error_messages'
+                  .field
+                  = f.label :名前
+                  <br>
+                  = f.text_field :name, class: 'form-control'
+                  .field
+                  = f.label :メールアドレス
+                  <br>
+                  = f.email_field :email, class: 'form-control'
+                  .field
+                  = f.label :パスワード
+                  <br>
+                  = f.password_field :password, class: 'form-control'
+                  .field
+                  = f.label :password_confirmation, "パスワード確認"
+                  <br>
+                  = f.password_field :password_confirmation, class: 'form-control'
+                  .field
+                  = f.submit "作成する", class: "btn btn-primary"
+/ 	= image_tag 'musubi-logo-type-white.png', :class => "service-title"
+/ 	h1.service-subtitle 感謝で繋がる恩贈りコミュニティ
+/ .content
+/     = form_with model: @user, url: users_path, local: true do |f|
+/         = render 'shared/error_messages'
+/         .field
+/         = f.label :name
+/         = f.text_field :name, class: 'form-control'
+/         .field
+/         = f.label :email
+/         = f.email_field :email, class: 'form-control'
+/         .field
+/         = f.label :password
+/         = f.password_field :password, class: 'form-control'
+/         .field
+/         = f.label :password_confirmation, "Confirmation"
+/         = f.password_field :password_confirmation, class: 'form-control'
+/         .field
+/          = f.submit "アカウント作成", class: "btn-primary"
