@@ -1,10 +1,11 @@
 - provide(:title, @user.name)
 .row
     .user_info
-        = link_to("編集","/users/#{@user.id}/edit")
-        h1
-            / = gravatar_for @user
-            = @user.name
+        - if current_user == @user
+            = link_to("編集","/users/#{@user.id}/edit")
+            h1
+                / = gravatar_for @user
+                = @user.name
         = image_tag "kao_default.jpg", :class => "prof_icon"
         a> href = "@user.tw_account" Twitter
         a> href = "@user.fb_account" Facebook
