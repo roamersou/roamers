@@ -2,8 +2,8 @@
 .row
     .user_info
         - if current_user == @user
-            = link_to("編集","/users/#{@user.id}/edit")
-            h1
+            = link_to image_tag("profile-edit-icon.png"), "/users/#{@user.id}/edit"
+
                 / = gravatar_for @user
         = @user.name      
         = image_tag "prfile-default.png", :class => "prof_icon"
@@ -14,11 +14,12 @@
             = @user.self_intro
     .container
         ul.bar-list
-            Button.bar-item サンクスレター
-                .content
-                    - if @user.thanksletter.any?
-                        h3 サンクスレターが = @user.thanksletter.count あります
-                        ol.thanksletter
-                            = render @thanksletter
-            Button.bar-item 恩贈りリスト
-            Button.bar-item comming soon
+            li.bar-item サンクスレター
+            .content
+                - if @user.thanksletters.any?
+                    ol.thanksletters
+                        = render @thanksletters
+                    = will_paginate @thanksletters
+
+            li.bar-item 恩贈りリスト
+            li.bar-item comming soon

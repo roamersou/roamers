@@ -4,11 +4,12 @@ class UsersController < ApplicationController
   before_action :admin_user, only: :destroy
 
   def index
-    @users = User.all
+    @users = User.paginate(page:params[:page])
   end
 
   def show
     @user = User.find(params[:id])
+    @thanksletters = @user.thanksletters.paginate(page: params[:page])
     
   end
 
@@ -56,15 +57,7 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :email, :password, :password_confirmation, :self_intro, :fb_account, :tw_account, :insta_account)
   end
 
-  #beforeアクション
-
-  #ログイン済みユーザーかどうか確認
-  def logged_in_user
-    unless logged_in?
-      flash[:danger] = "ログインしてください"
-      redirect_to login_url
-    end
-  end
+  #beforeフィルター
 
   # 正しいユーザーかどうか確認
   def correct_user

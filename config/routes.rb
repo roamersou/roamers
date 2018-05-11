@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # resources :accounts
   resources :pay_forwards
   resources :events
-  
+  resources :thanksletters, only: [:new, :create, :destroy]
   # devise_for :accounts, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
   # high_voltage
   get '*id' => 'pages#show', as: 'front_page'
