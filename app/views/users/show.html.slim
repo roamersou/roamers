@@ -7,9 +7,9 @@
                 / = gravatar_for @user
         = @user.name      
         = image_tag "kao_default.jpg", :class => "prof_icon"
-        a> href = "@user.tw_account" Twitter
-        a> href = "@user.fb_account" Facebook
-        a> href = "@yser.insta_account" Instagram
+        = link_to "Twitter", "@user.tw_account" 
+        = link_to "Facebook", "@user.fb_account" 
+        = link_to "Instagram", "@user.insta_account" 
         h4
             = @user.self_intro
     .container
