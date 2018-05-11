@@ -105,6 +105,34 @@ body {
     font-size: 12px;
   }
 }
+//*************** アカウント作成ページ(users/index.slim)***************//
+.users {
+  margin: 15px;
+  border: 1px solid #ccc;
+  .user-list {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0 10px 15px;
+    a {
+      color: #444;
+      &:before {
+        content: '';
+        display: inline-block;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background-color: #444;
+        position: relative;
+        top: -2px;
+        margin-right: 15px;
+      }
+    }
+  }
+  .user-list:last-child {
+      border-bottom: transparent;
+  }
+}
+
+
 //*************** アカウント作成ページ(users/new.html.slim)***************//
 .home-bg {
   .sign-up-title {
