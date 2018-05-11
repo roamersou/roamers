@@ -6,14 +6,19 @@
             h1
                 / = gravatar_for @user
         = @user.name      
-        = image_tag "kao_default.jpg", :class => "prof_icon"
-        = link_to "Twitter", "@user.tw_account" 
-        = link_to "Facebook", "@user.fb_account" 
-        = link_to "Instagram", "@user.insta_account" 
+        = image_tag "prfile-default.png", :class => "prof_icon"
+        = link_to "Twitter", @user.tw_account
+        = link_to "Facebook", @user.fb_account
+        = link_to "Instagram", @user.insta_account 
         h4
             = @user.self_intro
     .container
         ul.bar-list
             Button.bar-item サンクスレター
+                .content
+                    - if @user.thanksletter.any?
+                        h3 サンクスレターが = @user.thanksletter.count あります
+                        ol.thanksletter
+                            = render @thanksletter
             Button.bar-item 恩贈りリスト
             Button.bar-item comming soon
