@@ -1,19 +1,36 @@
 - provide(:title, @user.name)
-.row
-    .user_info
+.row.prof
+    .user-info
         - if current_user == @user
-            = link_to("編集","/users/#{@user.id}/edit")
-            h1
+            .prof-edit-icon = link_to image_tag("profile-edit-icon.png"), "/users/#{@user.id}/edit"
                 / = gravatar_for @user
-        = @user.name      
-        = image_tag "kao_default.jpg", :class => "prof_icon"
-        a> href = "@user.tw_account" Twitter
-        a> href = "@user.fb_account" Facebook
-        a> href = "@yser.insta_account" Instagram
-        h4
+        div.prof-icon-box
+            = image_tag "kao_default.jpg", :class => "prof-icon"
+        p.prof-name = @user.name
+        .prof-sns
+            a.prof-sns-icon.prof-fb> href = "@user.fb_account" Facebook
+            a.prof-sns-icon.prof-tw> href = "@user.tw_account" Twitter
+            a.prof-sns-icon.prof-insta> href = "@yser.insta_account" Instagram
+        p.prof-detail-text
             = @user.self_intro
     .container
-        ul.bar-list
-            Button.bar-item サンクスレター
-            Button.bar-item 恩贈りリスト
-            Button.bar-item comming soon
+        ul.bar-list.clearfix
+            li.bar-item.active-bar-list サンクスレター
+            li.bar-item 恩贈りリスト
+            li.bar-item Coming soon
+
+javascript:
+ //クリックしたときのファンクション
+ $('.bar-list li').click(function(){
+    //.index()を使いクリックされたタブが何番目かを調べ、
+      //indexという変数に代入します。
+    var index = $('.bar-list li').index($(this));
+    //コンテンツを一度すべて非表示にし、
+    // $('.menu-list li').css('display','none');
+    //クリックされたタブと同じ順番のコンテンツを表示します。
+    // $('.menu-list li').eq(index).css('display','block');
+    //一度タブについているクラスselectを消し、
+      $('.bar-list li').removeClass('active-bar-list');
+      //クリックされたタブのみにクラスselectをつけます。
+      $(this).addClass('active-bar-list')
+  });
