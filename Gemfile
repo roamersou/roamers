@@ -11,6 +11,8 @@ gem 'rails', '~> 5.1.4'
 gem 'bcrypt', '3.1.11'
 gem 'bootstrap-sass', '3.2.0.0'
 gem 'byebug',  '9.0.6', platform: :mri
+gem 'will_paginate',   '3.1.6'
+gem 'bootstrap-will_paginate', '1.0.0'
 
 gem 'puma', '~> 3.7'
 gem 'slim-rails'
