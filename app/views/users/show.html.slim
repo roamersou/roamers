@@ -16,6 +16,11 @@
     .container
         ul.bar-list.clearfix
             li.bar-item.active-bar-list サンクスレター
+            .content
+               - if @user.thanksletters.any?
+                   ol.thanksletters
+                       = render @thanksletters
+                   = will_paginate @thanksletters
             li.bar-item 恩贈りリスト
             li.bar-item Coming soon
 

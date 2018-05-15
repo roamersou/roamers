@@ -7,7 +7,7 @@
             li.item-list
               = link_to pay_forward_path(pf)
                 = image_tag(pf.image_name)
-                h2.pf-place= pf.place 
+                h2.pf-place= pf.place
                 h2.pf-title= pf.title
 .create-item-btn
   = link_to '恩を贈る', new_pay_forward_path, :class => "create-item"
