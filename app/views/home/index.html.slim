@@ -12,14 +12,11 @@
 	/ = link_to pay_forwards_path
 	/  	button.terms Facebookでログイン
 
-			button.signup 新規登録
-		= link_to login_path
-			|
-			button.login ログイン
+		
+	= link_to login_path
+		|
+		button.login ログイン
 
-	/ p.info-text ※招待コードを入力するとFacebookでログインができます。
-	/ .verify-btn-box
-	/ 	= link_to front_page_path('about')
 	= link_to front_page_path('terms')
 	  button.terms 利用規約
 	= link_to front_page_path('privacy')

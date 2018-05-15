@@ -1,5 +1,5 @@
-- provide(:title, "Log in")
-h1 Log in
+- provide(:title, "ログイン")
+h1 ログイン
 .row
     = form_for(:session, url: login_path) do |f|
 
@@ -13,9 +13,9 @@ h1 Log in
         = f.check_box :remember_me
       span ログイン状態を保存しますか？
 
-      = f.submit "Log in", class: "btn btn-primary"
+      = f.submit "ログイン", class: "btn btn-primary"
 
-p New user? 
+p 新規登録 
 = link_to new_user_path
   |
-  button.signup Sign up now!
+  button.signup アカウント作成
