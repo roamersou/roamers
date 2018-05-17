@@ -2,16 +2,17 @@ class ThankslettersController < ApplicationController
     before_action :logged_in_user, only: [:new, :create, :destroy]
 
     def new
+        @user_id = params[:user_id]
         @thanksletter = Thanksletter.new
     end
 
     def create
-        @thanksletter = current_user.thanksletters.build(thanksletter_params)
+        @thanksletter = current_user.thanksletters.build(thanksletter_params.merge(receiver_id: params[:user_id]))
         if @thanksletter.save
             flash[:success] = "サンクスレターを作成しました！"
-            redirect_to user_url
+            redirect_to users_url
         else
-            render user_url
+            render "new"
         end
     end
 
