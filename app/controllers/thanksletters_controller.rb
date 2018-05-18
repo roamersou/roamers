@@ -11,7 +11,7 @@ class ThankslettersController < ApplicationController
         @thanksletter = current_user.thanksletters.build(thanksletter_params.merge(receiver_id: params[:user_id]))
         if @thanksletter.save
             flash[:success] = "サンクスレターを作成しました！"
-            redirect_to users_url
+            redirect_to("/users/#{params[:user_id]}") 
         else
             render "new"
         end
