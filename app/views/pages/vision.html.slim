@@ -43,8 +43,8 @@ javascript:
    		$('.text-box li').css('display','none');
    		//クリックされたタブと同じ順番のコンテンツを表示します。
    		$('.text-box li').eq(index).css('display','block');
-   		//一度タブについているクラスselectを消し、
+   		//一度タブについているクラスactiveを消し、
         $('.title-box li').removeClass('active');
-        //クリックされたタブのみにクラスselectをつけます。
+        //クリックされたタブのみにクラスactiveをつけます。
         $(this).addClass('active')
     });

@@ -1,21 +1,22 @@
-- provide(:title, "ログイン")
-h1 ログイン
-.row
-    = form_for(:session, url: login_path) do |f|
+.home-bg
+  - provide(:title, "ログイン")
+  h1.sign-in-title おかえりなさい！
+  .sign-in-form
+    .row
+        = form_for(:session, url: login_path) do |f|
 
-      = f.label :email
-      = f.email_field :email, class: 'form-control'
+          = f.label :メールアドレス
+          = f.email_field :email, class: 'form-control'
 
-      = f.label :password
-      = f.password_field :password, class: 'form-control'
+          = f.label :パスワード
+          = f.password_field :password, class: 'form-control'
 
-      = f.label :remember_me, class: "checkbox inline" do
-        = f.check_box :remember_me
-      span ログイン状態を保存しますか？
+          = f.label :remember_me, class: "checkbox inline" do
+            = f.check_box :remember_me
+          span ログイン状態を保存しますか？
 
-      = f.submit "ログイン", class: "btn btn-primary"
+          = f.submit "ログイン", class: "btn btn-primary"
 
-p 新規登録 
-= link_to new_user_path
-  |
-  button.signup アカウント作成
+  = link_to new_user_path
+    |
+    button.link-signup アカウントを作成する

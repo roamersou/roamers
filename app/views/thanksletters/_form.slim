@@ -3,6 +3,7 @@ h3 感謝の気持ちを伝えましょう
 = form_with model: @thanksletter, multipart: true, local: true do |f|
 
     .field
+        = hidden_field_tag(:user_id, @user_id)
         = f.label :サンクスレター, :class => "field-title"
         = f.text_field :content, placeholder: '感謝の気持ちを贈りましょう', :class => "content-text"
     
