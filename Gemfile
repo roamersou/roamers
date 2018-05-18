@@ -13,6 +13,8 @@ gem 'bootstrap-sass', '3.2.0.0'
 gem 'byebug',  '9.0.6', platform: :mri
 gem 'will_paginate',   '3.1.6'
 gem 'bootstrap-will_paginate', '1.0.0'
+gem 'carrierwave',             '1.2.2'
+gem 'mini_magick',             '4.7.0'
 
 gem 'puma', '~> 3.7'
 gem 'slim-rails'
@@ -42,4 +44,8 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'web-console', '>= 3.3.0'
+end
+
+group :production do
+  gem 'fog', '1.42'
 end
