@@ -2,12 +2,12 @@
 #
 # Table name: thanksletters
 #
-#  id         :integer          not null, primary key
-#  content    :text(65535)
-#  user_id    :integer
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  friend_id  :integer
+#  id          :integer          not null, primary key
+#  content     :text(65535)
+#  user_id     :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  receiver_id :integer
 #
 # Indexes
 #
