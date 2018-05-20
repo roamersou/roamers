@@ -14,6 +14,7 @@
 #  fb_account      :string(255)
 #  insta_account   :string(255)
 #  admin           :boolean          default(FALSE)
+#  picture         :string(255)
 #
 # Indexes
 #

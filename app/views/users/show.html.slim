@@ -5,6 +5,7 @@
             .prof-edit-icon = link_to image_tag("profile-edit-icon.png"), "/users/#{@user.id}/edit"
                 / = gravatar_for @user
         div.prof-icon-box
+            / = image_tag "/uploads/user/picture/#{@user.id}/#{@user.picture.url}" if @user.picture?
             = image_tag "kao_default.jpg", :class => "prof-icon"
         p.prof-name = @user.name
         .prof-sns
