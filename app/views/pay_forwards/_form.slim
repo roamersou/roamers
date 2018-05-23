@@ -1,10 +1,7 @@
 = form_with model: @pay_forward, multipart: true, local: true do |f|
   / .top-image
   /   = f.label :画像, :class => "field-title"
-  /   = f.file_field :image_name, :class => "image-name"
-
-    / =form_tag(pay_forwards_path, {multipart: true})
-    / <input name="image" type="file">
+  /   = f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', :class => "picture"
 
   .field.field-first
     = f.label :タイトル, :class => "field-title"

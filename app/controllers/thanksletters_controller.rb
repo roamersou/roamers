@@ -5,7 +5,8 @@ class ThankslettersController < ApplicationController
     def new
         @user_id = params[:user_id]
         @user = User.find_by(id:params[:user_id])
-        @thanksletter = Thanksletter.new
+        # @thanksletter = Thanksletter.new
+        @thanksletter = current_user.thanksletters.build if logged_in?
     end
 
     def create
@@ -27,7 +28,7 @@ class ThankslettersController < ApplicationController
     private
 
     def thanksletter_params
-        params.require(:thanksletter).permit(:content)
+        params.require(:thanksletter).permit(:content, :picture)
     end
 
     def correct_user

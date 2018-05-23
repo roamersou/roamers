@@ -10,8 +10,7 @@
 #  updated_at :datetime         not null
 #  date       :string(255)
 #  place      :string(255)
-#  image_name :string(255)
-#  image_file :binary(65535)
+#  picture    :string(255)
 #
 # Indexes
 #

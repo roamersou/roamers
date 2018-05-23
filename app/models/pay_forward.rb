@@ -10,8 +10,7 @@
 #  updated_at :datetime         not null
 #  date       :string(255)
 #  place      :string(255)
-#  image_name :string(255)
-#  image_file :binary(65535)
+#  picture    :string(255)
 #
 # Indexes
 #
@@ -20,8 +19,18 @@
 
 class PayForward < ApplicationRecord
   belongs_to :account, optional: true
+  mount_uploader :picture, PictureUploader
   has_many :tag_pay_forwards
   has_many :tag, through: :tag_pay_forwards
   has_many :interests
+  validate :picture_size
 
+  private
+
+    # アップロードされた画像のサイズをバリデーションする
+    def picture_size
+      if picture.size > 5.megabytes
+        errors.add(:picture, "should be less than 5MB")
+      end
+    end
 end
