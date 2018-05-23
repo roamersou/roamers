@@ -5,8 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'mysql2', '>= 0.3.18', '< 0.5'
-gem 'sqlite3'
+
+# gem 'sqlite3'
 gem 'rails', '~> 5.1.4'
 gem 'bcrypt', '3.1.11'
 gem 'bootstrap-sass', '3.2.0.0'
@@ -28,6 +28,7 @@ gem 'omniauth-facebook'
 gem 'jquery-rails'
 
 group :development, :test do
+  gem 'mysql2', '>= 0.3.18', '< 0.5'
   gem 'capybara', '~> 2.13'
   gem 'dotenv-rails'
   gem 'factory_bot_rails'
